@@ -1,5 +1,5 @@
 import './App.css';
-import {Card} from './components/Card.jsx';
+import Card from './components/Card.jsx'
 function App() {
   const url=`https://pokeapi.co/api/v2/pokemon/charizard`;
   // const[cardData,setcardData]=useState({});
