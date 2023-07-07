@@ -1,38 +1,205 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #eff3ff;
+}
+.container {
+  width: 350px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 58%;
+  left: 50%;
+}
+/* .searchContainer {
+  background-color: #ffffff;
+  width: 80vw;
+  max-width: 37.5em;
+  padding: 3em 2.5em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 50%;
+  border-radius: 0.62em;
+  box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
+} */
+.search-wrapper {
+  position:absolute;
+  top:7%;
+  left:50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width:360px;
+  gap: 0.5em;
+}
+.search-wrapper button {
+  font-size: 1em;
+  background-color: #3d64e6;
+  color: #ffffff;
+  padding: 0.8em 0;
+  border: none;
+  border-radius: 1.5em;
+}
+.search-wrapper input {
+  font-size: 1em;
+  padding: 0 0.62em;
+  border: none;
+  border-bottom: 2px solid #3d64e6;
+  outline: none;
+  color: #222a43;
+}
+.noData{
+  position:relative;
+  margin-top:-80%;
+  left:50%;
+  transform: translateX(-50%);
+  font-size: large;
+}
+#card {
+  position: relative;
+  width: 100%;
+  padding: 30px 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+#card img {
+  display: block;
+  width: 180px;
+  max-height: 170px;
+  position: relative;
+  margin: 20px auto;
+  /* border:10px solid red; */
+}
+.hp {
+  width: 80px;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin-left: auto;
+  font-weight: 400;
+}
+.poke-name {
+  text-align: center;
+  font-weight: 600;
+}
+.types {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 20px 0;
+}
+.hp span,
+.types span {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+.types span {
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #ffffff;
+  /* border:2px solid green; */
+}
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
 }
+.stats p {
+  color: #404060;
+}
+#btn {
+  display: block;
+  padding: 15px 60px;
+  font-size: 18px;
+  background-color: #101010;
+  color: #ffffff;
+  position: relative;
+  margin: 30px auto;
+  border: none;
+  border-radius: 5px;
+}
+/* .btnWrapper {
+display:flex;
+align-items:start;
+justify-content: center;
+margin-bottom: 10px;
+border:2px solid #9b4444; 
+} */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.color-change-btn {
+  background-color: black;
+  /* position: relative; */
+  color: #54fff1;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  /* width: 50%; */
+  font-size: 18px;
+  border: 2px solid green;
+  transition: color 0.3s ease-in-out;
+  animation: colorChange 3s infinite; /* Animation applied by default */
+  /* margin:0px; */
+  text-align: center;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes colorChange {
+  0% {
+    opacity: 1; /* Starting opacity: 100% */
+    color: rgb(255, 0, 0); /* Starting color: Red */
+  }
+  10% {
+    color: rgb(255, 102, 102); /* Soothing color */
+  }
+  20% {
+    color: rgb(255, 204, 153); /* Soothing color */
+  }
+  30% {
+    color: rgb(255, 255, 153); /* Soothing color */
+  }
+  40% {
+    color: rgb(204, 255, 204); /* Soothing color */
+  }
+  50% {
+    color: rgb(153, 255, 255); /* Soothing color */
+  }
+  60% {
+    color: rgb(153, 204, 255); /* Soothing color */
+  }
+  70% {
+    color: rgb(204, 153, 255); /* Soothing color */
+  }
+  80% {
+    color: rgb(255, 153, 255); /* Soothing color */
+  }
+  90% {
+    color: rgb(255, 102, 178); /* Soothing color */
+  }
+  100% {
+    color: rgb(0, 0, 255); /* End color: Blue */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.color-change-btn:hover {
+  animation-play-state: paused; /* Pause the animation on hover */
+  color: #ffffff; /* Change text color on hover */
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ########################################### media queries####################################### */
+@media (max-height: 680px) {
+  .container {
+    top: 67%;
   }
-  to {
-    transform: rotate(360deg);
+  #card img{
+    max-width: 100px;
+  }
+  .search-wrapper{
+    top: 1%;
   }
 }
+
